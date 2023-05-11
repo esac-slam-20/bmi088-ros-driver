@@ -1,0 +1,17 @@
+<launch>
+  <node pkg="bmi088_driver" name="node" type="node" output="screen">
+    <!-- SPI 设备路径 -->
+    <param name="accel_dev" type="str" value="/dev/spidev0.0" />
+    <param name="gyro_dev" type="str" value="/dev/spidev0.1" />
+    <!-- 加速度计数据速率, Hz -->
+    <param name="accel_hz" type="int" value="100"/>
+    <!-- 加速度计带宽, 可用值为 1, 2, 3 -->
+    <param name="accel_bw" type="int" value="1"/>
+    <!-- 加速度计量程, g, 可用值为 3, 6, 12, 24 -->
+    <param name="accel_range" type="int" value="3"/>
+    <!-- 陀螺仪计数据速率, Hz -->
+    <param name="gyro_hz" type="int" value="100"/>
+    <!-- 陀螺仪计量程, Deg/s -->
+    <param name="gyro_range" type="int" value="250"/>
+  </node>
+</launch>
