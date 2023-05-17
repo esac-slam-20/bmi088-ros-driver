@@ -3,6 +3,14 @@
     <!-- SPI 设备路径 -->
     <param name="accel_dev" type="str" value="/dev/spidev0.0" />
     <param name="gyro_dev" type="str" value="/dev/spidev0.1" />
+    <!-- SPI 设备速率, Hz, 不能超过 10MHz -->
+    <param name="spi_speed" type="int" value="10000000" />
+    <!-- GPIO 设备 -->
+    <param name="gpio_chip" type="str" value="/dev/gpiochip0"/>
+    <!-- 加速度计中断GPIO -->
+    <param name="accel_int" type="int" value="25" />
+    <!-- 陀螺仪中断GPIO -->
+    <param name="gyro_int" type="int" value="24" />
     <!-- 加速度计数据速率, Hz -->
     <param name="accel_hz" type="int" value="100"/>
     <!-- 加速度计带宽, 可用值为 1, 2, 3 -->

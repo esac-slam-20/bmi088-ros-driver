@@ -121,6 +121,7 @@ target_include_directories(bmi088_api PUBLIC ${BMI08X_SENSORS_API})
 
 add_library(${PROJECT_NAME}
     STATIC
+    src/file.cpp
     src/bmi088_drv.cpp
 )
 target_link_libraries(${PROJECT_NAME}
