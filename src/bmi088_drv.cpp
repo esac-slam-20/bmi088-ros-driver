@@ -396,7 +396,7 @@ public:
         result = bmi08g_get_data(&bmi08_gyro, &dev);
         print_result("bmi08g_get_data", result);
 
-        *data = lsb_to_mps2(bmi08_gyro);
+        *data = lsb_to_dps(bmi08_gyro);
         return true;
     }
 
