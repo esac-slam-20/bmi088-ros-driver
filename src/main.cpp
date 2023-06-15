@@ -162,9 +162,11 @@ void publish_imu(ros::Publisher& pub, Vec3d accel, Vec3d gyro, uint64_t seq_id, 
     imu_msg.linear_acceleration.y = accel.y;
     imu_msg.linear_acceleration.z = accel.z;
 
-    imu_msg.angular_velocity.x = gyro.x;
-    imu_msg.angular_velocity.y = gyro.y;
-    imu_msg.angular_velocity.z = gyro.z;
+    const double m_pi = 3.1415926d;
+
+    imu_msg.angular_velocity.x = gyro.x / 180 * m_pi;
+    imu_msg.angular_velocity.y = gyro.y / 180 * m_pi;
+    imu_msg.angular_velocity.z = gyro.z / 180 * m_pi;
 
     pub.publish(imu_msg);
 }
